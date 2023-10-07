@@ -1,8 +1,9 @@
+import 'package:corvitakhuwat/onboarding.dart';
 import 'package:corvitakhuwat/second.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const Second());
+  runApp(const OnBoarding());
 }
 
 
