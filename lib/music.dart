@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
 class MusicScreen extends StatelessWidget {
@@ -30,7 +31,7 @@ class MusicScreen extends StatelessWidget {
                 child: Text(
                   'no ads while litening music',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontWeight: FontWeight.bold,
                     fontSize: 40,
                     color: Color(0xff34367c),
@@ -46,7 +47,7 @@ class MusicScreen extends StatelessWidget {
                 child: Text(
                   'litening to music is very comfortable without any annoying ads ',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: 18,
                     color: Color(0xff84abde),
                   ),
@@ -60,7 +61,7 @@ class MusicScreen extends StatelessWidget {
                   children: [
                     Text(
                       'skip',
-                      style: TextStyle(
+                      style: GoogleFonts.poppins(
                         fontSize: 25,
                         color: Color(0xff84abde),
                       ),
