@@ -9,8 +9,86 @@ class MusicScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Center(
-            child: Lottie.asset('assets/animation/music.json'),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 100,
+              ),
+              SizedBox(
+                height: 400,
+                child: Lottie.asset(
+                    'assets/animation/music.json'
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                width: 500,
+                child: Text(
+                  'no ads while litening music',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 40,
+                    color: Color(0xff34367c),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                width: 500,
+                child: Text(
+                  'litening to music is very comfortable without any annoying ads ',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Color(0xff84abde),
+                  ),
+                ),
+              ),
+              Spacer(),
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 35.0,vertical: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'skip',
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: Color(0xff84abde),
+                      ),
+                    ),
+
+                    SizedBox(
+                      width: 110,
+                      height: 55,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xff34367c),
+                          elevation: 8.0,
+                          shadowColor: Color(0xff34367c),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40)
+                          ),
+                        ),
+                          onPressed: (){},
+                          child: Icon(
+                            Icons.arrow_right_alt_outlined,
+                            size: 40,
+                          ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),
