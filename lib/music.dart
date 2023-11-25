@@ -1,4 +1,6 @@
+import 'package:corvitakhuwat/products.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
@@ -7,8 +9,7 @@ class MusicScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         body: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -79,7 +80,11 @@ class MusicScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(40)
                           ),
                         ),
-                          onPressed: (){},
+                          onPressed: (){
+                            // Get.to(Products());
+                            Get.snackbar('Hello Corvit', 'Akhuwat is great');
+                            Get.changeTheme(ThemeData.dark());
+                          },
                           child: Icon(
                             Icons.arrow_right_alt_outlined,
                             size: 40,
@@ -92,7 +97,6 @@ class MusicScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }
