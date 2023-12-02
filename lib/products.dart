@@ -1,11 +1,40 @@
+import 'package:corvitakhuwat/controller/controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 class Products extends StatelessWidget {
-  const Products({super.key});
+   Products({super.key});
+
+  final Controller c = Get.find();
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                IconButton(
+                    onPressed: (){
+                      Get.back();
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios_rounded,
+                    ),
+                ),
+              ],
+            ),
+            Text(
+              '${c.count}',
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

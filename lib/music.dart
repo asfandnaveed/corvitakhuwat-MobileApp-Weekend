@@ -1,11 +1,27 @@
+import 'package:corvitakhuwat/apiController/apiInterface.dart';
+import 'package:corvitakhuwat/controller/controller.dart';
 import 'package:corvitakhuwat/products.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
-class MusicScreen extends StatelessWidget {
-  const MusicScreen({super.key});
+class MusicScreen extends StatefulWidget {
+  MusicScreen({super.key});
+
+  @override
+  State<MusicScreen> createState() => _MusicScreenState();
+}
+
+class _MusicScreenState extends State<MusicScreen> {
+  final Controller c = Get.put(Controller());
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    ApiInterface().getAllProducts();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +34,7 @@ class MusicScreen extends StatelessWidget {
                 height: 100,
               ),
               SizedBox(
-                height: 400,
+                height: 200,
                 child: Lottie.asset(
                     'assets/animation/music.json'
                 ),
@@ -54,6 +70,21 @@ class MusicScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              Column(
+                children: [
+                  Obx((){
+                    return Text(
+                        '${c.count}'
+                    );
+                  }),
+                  ElevatedButton(
+                      onPressed: (){
+                        c.count ++;
+                      },
+                      child: Text('Increment')
+                  ),
+                ],
+              ),
               Spacer(),
               Padding(
                 padding:  EdgeInsets.symmetric(horizontal: 35.0,vertical: 15),
@@ -81,9 +112,9 @@ class MusicScreen extends StatelessWidget {
                           ),
                         ),
                           onPressed: (){
-                            // Get.to(Products());
-                            Get.snackbar('Hello Corvit', 'Akhuwat is great');
-                            Get.changeTheme(ThemeData.dark());
+                            Get.to(Products());
+                            // Get.snackbar('Hello Corvit', 'Akhuwat is great');
+                            // Get.changeTheme(ThemeData.dark());
                           },
                           child: Icon(
                             Icons.arrow_right_alt_outlined,
