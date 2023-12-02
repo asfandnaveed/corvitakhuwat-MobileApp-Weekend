@@ -32,8 +32,6 @@ class Products {
   String? pStock;
   String? pImage;
   String? createdAt;
-  Null? updatedAt;
-  Null? deletedAt;
 
   Products(
       {this.id,
@@ -42,9 +40,7 @@ class Products {
         this.pDescription,
         this.pStock,
         this.pImage,
-        this.createdAt,
-        this.updatedAt,
-        this.deletedAt});
+        this.createdAt});
 
   Products.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -54,8 +50,6 @@ class Products {
     pStock = json['p_stock'];
     pImage = json['p_image'];
     createdAt = json['created_at'];
-    updatedAt = json['updated_at'];
-    deletedAt = json['deleted_at'];
   }
 
   Map<String, dynamic> toJson() {
@@ -67,8 +61,6 @@ class Products {
     data['p_stock'] = this.pStock;
     data['p_image'] = this.pImage;
     data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
-    data['deleted_at'] = this.deletedAt;
     return data;
   }
 }
