@@ -9,4 +9,5 @@ class Controller extends GetxController{
 
   Rx<ProductsModel> allProductData = ProductsModel().obs;
 
+
 }
