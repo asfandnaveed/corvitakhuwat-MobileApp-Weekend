@@ -44,16 +44,48 @@ class Products extends StatelessWidget {
 
             GridView.builder(
                 shrinkWrap: true,
-                itemCount: 5,
+                itemCount: c.allProductData.value.products!.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2
+                  crossAxisCount: 2,
+                  
                 ),
                 itemBuilder: (contect , index){
                   return Card(
                     child: Container(
-                      color: Colors.green,
+
                       width: 200,
                       height: 200,
+                      child: Column(
+                        children: [
+                          Image.network(
+                            'https://projects.asfandnaveed.com/corvit/${c.allProductData.value.products![index].pImage}',
+                            height: 140,
+                            fit: BoxFit.cover,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '${c.allProductData.value.products![index].pName}',
+                                  style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+
+                          ),
+                          Text(
+                            '${c.allProductData.value.products![index].pPrice} Rs',
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 }
