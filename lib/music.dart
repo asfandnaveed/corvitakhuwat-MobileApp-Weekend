@@ -1,6 +1,7 @@
 import 'package:corvitakhuwat/apiController/apiInterface.dart';
 import 'package:corvitakhuwat/controller/controller.dart';
 import 'package:corvitakhuwat/products.dart';
+import 'package:corvitakhuwat/register.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -91,11 +92,16 @@ class _MusicScreenState extends State<MusicScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'skip',
-                      style: GoogleFonts.poppins(
-                        fontSize: 25,
-                        color: Color(0xff84abde),
+                    InkWell(
+                      onTap: (){
+                        Get.to(RegisterScreen());
+                      },
+                      child: Text(
+                        'Register',
+                        style: GoogleFonts.poppins(
+                          fontSize: 25,
+                          color: Color(0xff84abde),
+                        ),
                       ),
                     ),
 
